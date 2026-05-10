@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cerebro Rico - O Metodo de Reprogramacao Mental para Acao e Foco</title>
+<style>
+:root{
+  --cyan:#00E5FF;--cyan2:#00B8D4;--cdim:rgba(0,229,255,.1);--cborder:rgba(0,229,255,.22);
+  --dark:#060608;--d2:#0D0D10;--d3:#13131A;--d4:#1A1A24;--d5:#20202C;
+  --text:#FFFFFF;--muted:#88889A;--success:#00E5A0;--danger:#FF4466;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--dark);color:var(--text);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;top:-180px;left:50%;transform:translateX(-50%);width:700px;height:420px;background:radial-gradient(ellipse,rgba(0,229,255,.06) 0%,transparent 70%);pointer-events:none;z-index:0}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 48px;border-bottom:1px solid rgba(255,255,255,.05);position:sticky;top:0;background:rgba(6,6,8,.94);backdrop-filter:blur(16px);z-index:200}
+.logo{display:flex;align-items:center;gap:11px;font-size:1.1rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+.logo-ring{width:36px;height:36px;border:1.5px solid var(--cyan);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 0 14px rgba(0,229,255,.25)}
+.logo-txt{color:var(--cyan);text-shadow:0 0 22px rgba(0,229,255,.45)}
+.nav-btns{display:flex;gap:10px}
+.btn{padding:10px 22px;border-radius:6px;font-size:.87rem;font-weight:700;cursor:pointer;border:none;letter-spacing:.03em;transition:all .2s;font-family:inherit}
+.btn-ghost{background:transparent;border:1px solid var(--cborder);color:var(--cyan)}
+.btn-ghost:hover{border-color:var(--cyan);box-shadow:0 0 14px rgba(0,229,255,.18)}
+.btn-cyan{background:var(--cyan);color:#000;font-weight:800}
+.btn-cyan:hover{box-shadow:0 0 22px rgba(0,229,255,.5);transform:translateY(-1px)}
+.btn-lg{padding:17px 42px;font-size:.98rem}
+.btn-full{width:100%;padding:14px;font-size:.93rem}
+.hero{position:relative;text-align:center;padding:110px 20px 90px;max-width:900px;margin:0 auto;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--cdim);border:1px solid var(--cborder);color:var(--cyan);padding:7px 18px;border-radius:4px;font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:36px}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:900;line-height:1.06;letter-spacing:-.02em;margin-bottom:26px;text-transform:uppercase}
+.cyan{color:var(--cyan);text-shadow:0 0 28px rgba(0,229,255,.35)}
+.hero-sub{font-size:1.05rem;color:var(--muted);max-width:620px;margin:0 auto 46px;line-height:1.78}
+.hero-sub strong{color:var(--text)}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:52px}
+.hero-proof{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap}
+.proof-item{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted)}
+.dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;box-shadow:0 0 6px var(--cyan)}
+.pain{background:var(--d2);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);padding:80px 20px}
+.pain-inner{max-width:860px;margin:0 auto;text-align:center}
+.pain-inner h2{font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:900;line-height:1.2;margin-bottom:18px;text-transform:uppercase}
+.pain-inner>p{color:var(--muted);font-size:.95rem;margin-bottom:44px;line-height:1.72}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;text-align:left}
+.pain-item{background:var(--d3);border:1px solid rgba(255,68,102,.13);border-radius:10px;padding:18px 20px;display:flex;gap:13px;align-items:flex-start}
+.pain-ico{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.pain-item p{font-size:.87rem;color:#ccc;line-height:1.55}
+.pain-end{margin-top:38px;font-size:.95rem;color:var(--muted);line-height:1.72}
+.pain-end strong{color:var(--cyan)}
+.urg{background:linear-gradient(90deg,rgba(0,229,255,.07),rgba(0,229,255,.02),rgba(0,229,255,.07));border-top:1px solid var(--cborder);border-bottom:1px solid var(--cborder);padding:13px 20px;text-align:center;font-size:.84rem;color:var(--cyan);font-weight:600;letter-spacing:.03em}
+.sec{padding:88px 20px;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.sec-lbl{font-size:.7rem;font-weight:700;letter-spacing:.15em;color:var(--cyan);text-transform:uppercase;text-align:center;margin-bottom:12px}
+.sec-title{text-align:center;margin-bottom:56px}
+.sec-title h2{font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:900;line-height:1.15;text-transform:uppercase;margin-bottom:13px}
+.sec-title p{color:var(--muted);font-size:.93rem;max-width:570px;margin:0 auto;line-height:1.72}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:2px;border:1px solid var(--cborder);border-radius:14px;overflow:hidden}
+.pillar{background:var(--d3);padding:34px 30px;transition:background .3s}
+.pillar:hover{background:var(--d4)}
+.p-num{font-size:.68rem;font-weight:700;letter-spacing:.15em;color:var(--cyan);margin-bottom:14px}
+.p-ico{font-size:1.9rem;margin-bottom:14px;display:block}
+.pillar h3{font-size:1.15rem;font-weight:800;text-transform:uppercase;margin-bottom:11px}
+.pillar p{color:var(--muted);font-size:.87rem;line-height:1.65}
+.p-tag{display:inline-block;margin-top:14px;background:var(--cdim);border:1px solid var(--cborder);color:var(--cyan);font-size:.7rem;font-weight:700;letter-spacing:.08em;padding:4px 11px;border-radius:3px}
+.t-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+@media(max-width:720px){.t-grid{grid-template-columns:1fr}}
+.ba{display:flex;flex-direction:column;gap:10px}
+.ba-row{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:8px;font-size:.87rem;line-height:1.5}
+.ba-row.b{background:rgba(255,68,102,.05);border:1px solid rgba(255,68,102,.13);color:#aaa}
+.ba-row.a{background:rgba(0,229,255,.05);border:1px solid rgba(0,229,255,.18);color:var(--text)}
+.ba-ico{font-size:.9rem;flex-shrink:0;margin-top:1px}
+.t-text h3{font-size:1.7rem;font-weight:900;text-transform:uppercase;line-height:1.2;margin-bottom:18px}
+.t-text p{color:var(--muted);font-size:.92rem;line-height:1.75;margin-bottom:22px}
+.comm-box{background:var(--d3);border:1px solid var(--cborder);border-radius:16px;padding:48px;text-align:center;max-width:760px;margin:0 auto}
+.comm-box h3{font-size:1.65rem;font-weight:900;text-transform:uppercase;margin-bottom:14px}
+.comm-box p{color:var(--muted);font-size:.93rem;line-height:1.75;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto}
+.comm-items{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:36px}
+.comm-tag{background:var(--cdim);border:1px solid var(--cborder);color:var(--cyan);font-size:.8rem;font-weight:700;padding:8px 16px;border-radius:6px}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;max-width:800px;margin:0 auto}
+.plan{background:var(--d3);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:34px;position:relative}
+.plan.feat{border-color:var(--cyan);background:linear-gradient(160deg,rgba(0,229,255,.06) 0%,var(--d3) 60%);box-shadow:0 0 40px rgba(0,229,255,.07)}
+.plan-pop{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cyan);color:#000;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 15px;border-radius:3px;white-space:nowrap}
+.plan-tier{font-size:.7rem;font-weight:700;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin-bottom:18px}
+.plan-price{margin-bottom:26px}
+.cur{font-size:.95rem;color:var(--cyan);font-weight:700;vertical-align:top;line-height:2.2}
+.amt{font-size:3rem;font-weight:900}
+.per{font-size:.83rem;color:var(--muted);margin-left:3px}
+.plan-feats{list-style:none;margin-bottom:28px}
+.plan-feats li{display:flex;align-items:flex-start;gap:9px;padding:9px 0;font-size:.87rem;color:#ccc;border-bottom:1px solid rgba(255,255,255,.04);line-height:1.4}
+.ck{color:var(--cyan);font-size:.82rem;flex-shrink:0;margin-top:1px}
+.cta-final{text-align:center;padding:96px 20px;max-width:720px;margin:0 auto}
+.cta-final h2{font-size:clamp(1.8rem,4vw,2.9rem);font-weight:900;line-height:1.1;text-transform:uppercase;margin-bottom:18px}
+.cta-final p{color:var(--muted);font-size:.95rem;margin-bottom:38px;line-height:1.75}
+.cta-final p strong{color:var(--text)}
+footer{border-top:1px solid rgba(255,255,255,.04);padding:34px 40px;text-align:center;color:var(--muted);font-size:.78rem;line-height:1.8}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--cyan)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:1000;align-items:center;justify-content:center}
+.overlay.open{display:flex}
+.modal{background:var(--d3);border:1px solid var(--cborder);border-radius:16px;padding:38px;width:100%;max-width:410px;margin:20px;position:relative;box-shadow:0 0 60px rgba(0,229,255,.09)}
+.modal-x{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--muted);font-size:1.25rem;cursor:pointer;font-family:inherit}
+.modal h2{font-size:1.4rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:var(--cyan);text-shadow:0 0 20px rgba(0,229,255,.3);margin-bottom:6px}
+.modal-sub{color:var(--muted);font-size:.86rem;margin-bottom:26px;line-height:1.55}
+.m-tabs{display:flex;background:var(--d4);border-radius:6px;padding:3px;margin-bottom:22px;gap:3px}
+.tab{flex:1;text-align:center;padding:9px;border-radius:4px;font-size:.84rem;font-weight:700;cursor:pointer;color:var(--muted);transition:all .2s;letter-spacing:.03em}
+.tab.on{background:var(--cyan);color:#000}
+.fw{display:none}.fw.on{display:block}
+.fld{margin-bottom:13px}
+.fld label{display:block;font-size:.78rem;font-weight:600;color:var(--muted);margin-bottom:5px}
+.fld input{width:100%;padding:11px 13px;background:var(--d4);border:1px solid rgba(255,255,255,.08);border-radius:6px;color:var(--text);font-size:.9rem;outline:none;transition:border-color .2s;font-family:inherit}
+.fld input:focus{border-color:var(--cyan);box-shadow:0 0 8px rgba(0,229,255,.13)}
+.alrt{display:none;padding:10px 13px;border-radius:6px;font-size:.81rem;margin-bottom:12px}
+.alrt.on{display:block}
+.alrt.err{background:rgba(255,68,102,.1);border:1px solid rgba(255,68,102,.22);color:#ff8899}
+.alrt.ok{background:rgba(0,229,160,.1);border:1px solid rgba(0,229,160,.22);color:#66ffcc}
+#dash{display:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:16px 36px;border-bottom:1px solid rgba(255,255,255,.05);background:rgba(6,6,8,.96);backdrop-filter:blur(16px);position:sticky;top:0;z-index:100}
+.d-body{max-width:1140px;margin:0 auto;padding:36px 20px}
+.d-layout{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:start}
+@media(max-width:860px){.d-layout{grid-template-columns:1fr}}
+.sidebar{display:flex;flex-direction:column;gap:8px}
+.sb-item{display:flex;align-items:center;gap:11px;padding:11px 14px;border-radius:8px;font-size:.87rem;font-weight:600;cursor:pointer;color:var(--muted);transition:all .2s;border:1px solid transparent}
+.sb-item:hover{color:var(--text);background:var(--d3)}
+.sb-item.active{color:var(--cyan);background:var(--cdim);border-color:var(--cborder)}
+.sb-icon{font-size:1rem;width:20px;text-align:center}
+.sb-section{font-size:.65rem;font-weight:700;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;padding:14px 14px 6px;opacity:.6}
+.d-main{min-width:0}
+.d-welcome{background:linear-gradient(135deg,rgba(0,229,255,.09),transparent);border:1px solid var(--cborder);border-radius:14px;padding:28px 32px;margin-bottom:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.d-welcome h2{font-size:1.4rem;font-weight:900;text-transform:uppercase;margin-bottom:6px}
+.d-welcome p{color:var(--muted);font-size:.87rem}
+.streak-badge{display:flex;align-items:center;gap:10px;background:var(--d3);border:1px solid rgba(0,229,255,.2);padding:12px 20px;border-radius:10px;flex-shrink:0}
+.streak-num{font-size:1.8rem;font-weight:900;color:var(--cyan);line-height:1}
+.streak-lbl{font-size:.72rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin-bottom:22px}
+.stat{background:var(--d3);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:18px 20px}
+.stat-lbl{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.stat-val{font-size:1.7rem;font-weight:900;color:var(--cyan)}
+.stat-note{font-size:.72rem;color:var(--muted);margin-top:3px}
+.page{display:none}.page.on{display:block}
+.card{background:var(--d3);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:26px;margin-bottom:18px}
+.card-hd{font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.r-row{display:flex;gap:14px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:flex-start}
+.r-time{font-size:.72rem;font-weight:700;color:var(--cyan);white-space:nowrap;min-width:88px}
+.r-act{font-size:.87rem;color:#ccc}
+.r-cat{font-size:.7rem;background:var(--cdim);border:1px solid var(--cborder);color:var(--cyan);padding:2px 8px;border-radius:3px;white-space:nowrap;margin-top:2px}
+.motive{background:linear-gradient(135deg,rgba(0,229,255,.08),transparent);border:1px solid var(--cborder);border-radius:10px;padding:22px;font-size:1rem;font-weight:700;color:var(--cyan);line-height:1.65;text-align:center;margin-bottom:18px}
+.goal-item{background:var(--d4);border-radius:8px;padding:16px;margin-bottom:10px}
+.goal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.goal-name{font-size:.9rem;font-weight:700}
+.goal-pct{font-size:.8rem;color:var(--cyan);font-weight:700}
+.progress{background:rgba(255,255,255,.08);border-radius:4px;height:6px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--cyan2),var(--cyan));border-radius:4px;transition:width .8s ease}
+.goal-meta{display:flex;justify-content:space-between;margin-top:8px;font-size:.75rem;color:var(--muted)}
+.fin-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin-bottom:20px}
+.fin-card{background:var(--d4);border-radius:10px;padding:18px}
+.fin-lbl{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.fin-val{font-size:1.4rem;font-weight:900}
+.fin-val.pos{color:var(--success)}.fin-val.neg{color:var(--danger)}.fin-val.neu{color:var(--cyan)}
+.comm-locked{text-align:center;padding:40px 20px;color:var(--muted);font-size:.9rem;line-height:1.7}
+.comm-locked .lock-ico{font-size:2.5rem;margin-bottom:14px}
+.u-chip{display:flex;align-items:center;gap:10px}
+.u-av{width:35px;height:35px;background:var(--cyan);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.88rem;color:#000}
+.u-nm{font-size:.87rem;font-weight:700}
+.out-btn{background:none;border:1px solid rgba(255,255,255,.08);color:var(--muted);padding:7px 16px;border-radius:6px;font-size:.8rem;cursor:pointer;font-family:inherit;transition:all .2s}
+.out-btn:hover{border-color:var(--danger);color:var(--danger)}
+@media(max-width:600px){nav{padding:14px 18px}.sec{padding:60px 14px}.dh{padding:14px 18px}}
+</style>
+</head>
+<body>
+
+<div id="landing">
+<nav>
+  <div class="logo">
+    <div class="logo-ring">&#x1F9E0;</div>
+    <span class="logo-txt">CEREBRO RICO</span>
+  </div>
+  <div class="nav-btns">
+    <button class="btn btn-ghost" onclick="openModal('login')">Entrar</button>
+    <button class="btn btn-cyan" onclick="openModal('reg')">Comecar Agora</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">&#11042; METODO DE REPROGRAMACAO MENTAL</div>
+  <h1>Voce sabe o que precisa fazer.<br><span class="cyan">Por que nao faz?</span></h1>
+  <p class="hero-sub">Nao e falta de forca de vontade. E a sua mente programada para sabotar. O <strong>Cerebro Rico</strong> reprograma seus padroes e transforma intencao em acao, de vez.</p>
+  <div class="hero-cta">
+    <button class="btn btn-cyan btn-lg" onclick="openModal('reg')">Reprogramar Agora &#8594;</button>
+    <button class="btn btn-ghost btn-lg" onclick="document.getElementById('metodo').scrollIntoView({behavior:'smooth'})">Entender o Metodo</button>
+  </div>
+  <div class="hero-proof">
+    <div class="proof-item"><div class="dot"></div>Sem listas de produtividade inuteis</div>
+    <div class="proof-item"><div class="dot"></div>Sistema completo em 3 pilares</div>
+    <div class="proof-item"><div class="dot"></div>+1.200 mentes reprogramadas</div>
+  </div>
+</div>
+
+<div class="pain">
+  <div class="pain-inner">
+    <h2>Reconhece alguma dessas situacoes?</h2>
+    <p>Se sim, o problema nao e voce - e como seu cerebro foi condicionado ao longo dos anos.</p>
+    <div class="pain-grid">
+      <div class="pain-item"><div class="pain-ico">&#x1F501;</div><p>Comeca a semana motivado e termina sem ter feito o que realmente importava.</p></div>
+      <div class="pain-item"><div class="pain-ico">&#x1F4F1;</div><p>Perde horas no celular sabendo que deveria estar fazendo outra coisa e nao consegue parar.</p></div>
+      <div class="pain-item"><div class="pain-ico">&#x1F9F1;</div><p>Tem projetos, planos e ideias que ficam exatamente onde estavam ha meses.</p></div>
+      <div class="pain-item"><div class="pain-ico">&#x1F624;</div><p>Se culpa por ser "preguicoso", quando na verdade e seu sistema de rotina que esta quebrado.</p></div>
+      <div class="pain-item"><div class="pain-ico">&#x1F300;</div><p>Esta sempre ocupado mas raramente avanca no que de fato muda sua vida.</p></div>
+      <div class="pain-item"><div class="pain-ico">&#x23F3;</div><p>Adia decisoes porque a cabeca esta sempre cheia, dispersa ou travada.</p></div>
+    </div>
+    <p class="pain-end">Isso nao e fraqueza. E <strong>programacao mental</strong>. E programacao pode ser <strong class="cyan">reescrita.</strong></p>
+  </div>
+</div>
+
+<div class="urg">&#9889; Oferta de lancamento - Acesso liberado por tempo limitado. Vagas encerrando.</div>
+
+<div class="sec" id="metodo">
+  <div class="sec-lbl">&#9670; O SISTEMA</div>
+  <div class="sec-title">
+    <h2>Tres pilares.<br>Uma transformacao completa.</h2>
+    <p>Cada pilar cuida de uma dimensao da sua mente e da sua vida. Juntos, criam o sistema que voce nunca conseguiu manter sozinho.</p>
+  </div>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="p-num">PILAR 01 / ATLAS</div>
+      <span class="p-ico">&#x1F4C5;</span>
+      <h3>Arquiteto da Rotina</h3>
+      <p>Monta uma rotina que voce realmente consegue cumprir - nao uma lista de desejos que te frustra todo dia.</p>
+      <span class="p-tag">ROTINA &middot; FOCO &middot; ESTRUTURA</span>
+    </div>
+    <div class="pillar">
+      <div class="p-num">PILAR 02 / NERO</div>
+      <span class="p-ico">&#x1F50D;</span>
+      <h3>Detetive do Comportamento</h3>
+      <p>Identifica os padroes invisiveis que travam sua execucao e devolve clareza sobre o que esta te sabotando.</p>
+      <span class="p-tag">ORGANIZACAO &middot; CLAREZA &middot; CONTROLE</span>
+    </div>
+    <div class="pillar">
+      <div class="p-num">PILAR 03 / APOLLO</div>
+      <span class="p-ico">&#x1F3AF;</span>
+      <h3>Motor de Missoes</h3>
+      <p>Transforma metas vagas em projetos reais com prazos e marcos - porque a execucao precisa virar habito.</p>
+      <span class="p-tag">METAS &middot; DISCIPLINA &middot; PERSISTENCIA</span>
+    </div>
+  </div>
+</div>
+
+<div class="sec" style="padding-top:0">
+  <div class="sec-lbl">&#9670; A TRANSFORMACAO</div>
+  <div class="sec-title"><h2>Antes e depois sao duas realidades diferentes</h2></div>
+  <div class="t-grid">
+    <div class="ba">
+      <div class="ba-row b"><span class="ba-ico">&#x2715;</span>Acorda sem saber por onde comecar</div>
+      <div class="ba-row a"><span class="ba-ico">&#x2713;</span>Acorda com um plano claro e executavel</div>
+      <div class="ba-row b"><span class="ba-ico">&#x2715;</span>Procrastina e se culpa no final do dia</div>
+      <div class="ba-row a"><span class="ba-ico">&#x2713;</span>Executa em blocos de foco sem esforco</div>
+      <div class="ba-row b"><span class="ba-ico">&#x2715;</span>Metas que ficam no papel por meses</div>
+      <div class="ba-row a"><span class="ba-ico">&#x2713;</span>Progresso visivel toda semana</div>
+      <div class="ba-row b"><span class="ba-ico">&#x2715;</span>Cabeca cheia, dispersa, sem saida</div>
+      <div class="ba-row a"><span class="ba-ico">&#x2713;</span>Mente organizada, clara e focada</div>
+      <div class="ba-row b"><span class="ba-ico">&#x2715;</span>Sempre ocupado, nunca avancando</div>
+      <div class="ba-row a"><span class="ba-ico">&#x2713;</span>Cada hora conta para o que importa</div>
+    </div>
+    <div class="t-text">
+      <h3>Nao e sobre<br><span class="cyan">trabalhar mais.</span><br>E sobre<br><span class="cyan">pensar diferente.</span></h3>
+      <p>A maioria tenta resolver um problema de programacao mental com mais listas, mais apps, mais forca de vontade. Nao funciona porque o problema esta mais fundo.</p>
+      <p>O Cerebro Rico age na raiz: nos padroes, nas crencas operacionais e na estrutura do seu dia.</p>
+      <button class="btn btn-cyan" onclick="openModal('reg')">Quero Essa Transformacao &#8594;</button>
+    </div>
+  </div>
+</div>
+
+<div class="sec" style="padding-top:0">
+  <div class="sec-lbl">&#9670; COMUNIDADE</div>
+  <div class="sec-title">
+    <h2>Voce nao vai fazer isso sozinho</h2>
+    <p>Dentro da plataforma, voce entra para uma comunidade privada de pessoas com a mesma missao.</p>
+  </div>
+  <div class="comm-box">
+    <h3>Comunidade Privada</h3>
+    <p>Um espaco fechado onde membros compartilham vitorias, se cobram mutuamente e avancam juntos. Sem redes sociais. Sem distracoes. So execucao.</p>
+    <div class="comm-items">
+      <span class="comm-tag">&#x1F525; Desafios de 21 dias</span>
+      <span class="comm-tag">&#x1F91D; Parceiros de accountability</span>
+      <span class="comm-tag">&#x1F3C6; Ranking de execucao</span>
+      <span class="comm-tag">&#x1F4D6; Diario de vitorias</span>
+      <span class="comm-tag">&#x26A1; Missoes mensais</span>
+    </div>
+    <button class="btn btn-cyan" onclick="openModal('reg')">Quero Entrar na Comunidade &#8594;</button>
+  </div>
+</div>
+
+<div class="sec" id="planos" style="padding-top:0">
+  <div class="sec-lbl">&#9670; ACESSO</div>
+  <div class="sec-title">
+    <h2>Escolha seu nivel</h2>
+    <p>Sem contratos. Cancele quando quiser.</p>
+  </div>
+  <div class="plans">
+    <div class="plan">
+      <div class="plan-tier">Plano Essencial</div>
+      <div class="plan-price"><span class="cur">R$</span><span class="amt">47</span><span class="per">/mes</span></div>
+      <ul class="plan-feats">
+        <li><span class="ck">&#9670;</span>Atlas - Arquiteto de Rotina</li>
+        <li><span class="ck">&#9670;</span>Nero - Detetive do Comportamento</li>
+        <li><span class="ck">&#9670;</span>Apollo - Motor de Missoes</li>
+        <li><span class="ck">&#9670;</span>Painel de progresso diario</li>
+        <li><span class="ck">&#9670;</span>Suporte por e-mail</li>
+      </ul>
+      <button class="btn btn-ghost btn-full" onclick="openModal('reg')">Comecar Agora</button>
+    </div>
+    <div class="plan feat">
+      <div class="plan-pop">MAIS ESCOLHIDO</div>
+      <div class="plan-tier">Plano Completo</div>
+      <div class="plan-price"><span class="cur">R$</span><span class="amt">97</span><span class="per">/mes</span></div>
+      <ul class="plan-feats">
+        <li><span class="ck">&#9670;</span>Tudo do plano essencial</li>
+        <li><span class="ck">&#9670;</span>Analise de padroes semanais</li>
+        <li><span class="ck">&#9670;</span>Relatorio de evolucao mental</li>
+        <li><span class="ck">&#9670;</span>Comunidade privada fechada</li>
+        <li><span class="ck">&#9670;</span>Desafios e missoes mensais</li>
+        <li><span class="ck">&#9670;</span>Suporte prioritario</li>
+      </ul>
+      <button class="btn btn-cyan btn-full" onclick="openModal('reg')">Quero o Completo &#8594;</button>
+    </div>
+  </div>
+</div>
+
+<div class="cta-final">
+  <h2>A versao de voce que age esta esperando.<br><span class="cyan">Quando voce decide?</span></h2>
+  <p>Cada dia com a mente no mesmo padrao e um dia de atraso.<br><strong>A mudanca nao acontece quando voce estiver pronto. Acontece quando voce decide.</strong></p>
+  <button class="btn btn-cyan btn-lg" onclick="openModal('reg')">Reprogramar Minha Mente Agora &#8594;</button>
+</div>
+
+<footer>
+  <p>&copy; 2025 Cerebro Rico - O Metodo de Reprogramacao Mental para Acao e Foco</p>
+  <p style="margin-top:8px"><a href="#">Termos de Uso</a> &nbsp;&middot;&nbsp; <a href="#">Privacidade</a> &nbsp;&middot;&nbsp; <a href="#">Suporte</a></p>
+</footer>
+</div>
+
+<div id="dash">
+  <div class="dh">
+    <div class="logo"><div class="logo-ring">&#x1F9E0;</div><span class="logo-txt">CEREBRO RICO</span></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="u-chip"><div class="u-av" id="dAv">U</div><div class="u-nm" id="dNm">Usuario</div></div>
+      <button class="out-btn" onclick="logout()">Sair</button>
+    </div>
+  </div>
+  <div class="d-body">
+    <div class="d-welcome">
+      <div><h2>Bem-vindo de volta, <span id="wNm" style="color:var(--cyan)">Usuario</span>.</h2><p>Hoje e um novo dia para executar o que importa. Seus 3 pilares estao ativos.</p></div>
+      <div class="streak-badge"><div><div class="streak-num" id="sStrk">0</div><div class="streak-lbl">dias seguidos &#x1F525;</div></div></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-lbl">&#x26A1; Nivel Mental</div><div class="stat-val" id="sLvl">1</div><div class="stat-note">Iniciante Consciente</div></div>
+      <div class="stat"><div class="stat-lbl">&#11042; XP Total</div><div class="stat-val" id="sXP">0</div><div class="stat-note">pontos de evolucao</div></div>
+      <div class="stat"><div class="stat-lbl">&#x1F3AF; Missoes Ativas</div><div class="stat-val">3</div><div class="stat-note">em progresso</div></div>
+      <div class="stat"><div class="stat-lbl">&#x2705; Blocos Hoje</div><div class="stat-val">0/6</div><div class="stat-note">concluidos</div></div>
+    </div>
+    <div class="d-layout">
+      <div class="sidebar">
+        <div class="sb-section">Menu</div>
+        <div class="sb-item active" onclick="showPage('home',this)"><span class="sb-icon">&#x1F3E0;</span>Visao Geral</div>
+        <div class="sb-item" onclick="showPage('rotina',this)"><span class="sb-icon">&#x1F4C5;</span>Minha Rotina</div>
+        <div class="sb-item" onclick="showPage('missoes',this)"><span class="sb-icon">&#x1F3AF;</span>Missoes</div>
+        <div class="sb-item" onclick="showPage('financas',this)"><span class="sb-icon">&#x1F4CA;</span>Organizacao</div>
+        <div class="sb-item" onclick="showPage('comunidade',this)"><span class="sb-icon">&#x1F465;</span>Comunidade</div>
+        <div class="sb-section">Conta</div>
+        <div class="sb-item" onclick="showPage('perfil',this)"><span class="sb-icon">&#x1F464;</span>Meu Perfil</div>
+      </div>
+      <div class="d-main">
+        <div class="page on" id="page-home">
+          <div class="card"><div class="card-hd">&#x1F3AF; Apollo - Mensagem do dia</div><div class="motive" id="motiveBox">"A diferenca entre quem sonha e quem conquista e uma unica decisao: agir agora." &#x1F9E0;</div></div>
+          <div class="card">
+            <div class="card-hd">&#x1F4C5; Atlas - Plano de hoje</div>
+            <div class="r-row"><div class="r-time">06:00-07:00</div><div class="r-act">Manha poderosa - ative seu estado mental</div></div>
+            <div class="r-row"><div class="r-time">07:00-12:00</div><div class="r-act">Foco profundo - execute o que mais importa</div></div>
+            <div class="r-row"><div class="r-time">12:00-13:00</div><div class="r-act">Recarga - almoco sem tela</div></div>
+            <div class="r-row"><div class="r-time">13:00-17:00</div><div class="r-act">Execucao operacional</div></div>
+            <div class="r-row"><div class="r-time">17:00-18:00</div><div class="r-act">Revisao e planejamento do amanha</div></div>
+            <div class="r-row"><div class="r-time">18:00-22:00</div><div class="r-act">Familia, lazer e desenvolvimento pessoal</div></div>
+          </div>
+          <div class="card">
+            <div class="card-hd">&#x1F50D; Nero - Progresso das missoes</div>
+            <div class="goal-item"><div class="goal-top"><span class="goal-name">&#x1F9D8; Meditar 10 min por dia</span><span class="goal-pct">67%</span></div><div class="progress"><div class="progress-bar" style="width:67%"></div></div><div class="goal-meta"><span>14 de 21 dias</span><span>7 dias restantes</span></div></div>
+            <div class="goal-item"><div class="goal-top"><span class="goal-name">&#x1F4D6; Ler 20 paginas/dia</span><span class="goal-pct">40%</span></div><div class="progress"><div class="progress-bar" style="width:40%"></div></div><div class="goal-meta"><span>8 de 20 dias</span><span>12 dias restantes</span></div></div>
+            <div class="goal-item"><div class="goal-top"><span class="goal-name">&#x1F4A7; Beber 2L de agua</span><span class="goal-pct">85%</span></div><div class="progress"><div class="progress-bar" style="width:85%"></div></div><div class="goal-meta"><span>17 de 20 dias</span><span>3 dias restantes</span></div></div>
+          </div>
+        </div>
+        <div class="page" id="page-rotina">
+          <div class="card">
+            <div class="card-hd">&#x1F4C5; Atlas - Sua Rotina de Hoje</div>
+            <div class="r-row"><div class="r-time">05:30-06:00</div><div><div class="r-act">Acordar e hidratacao</div><div class="r-cat">saude</div></div></div>
+            <div class="r-row"><div class="r-time">06:00-07:00</div><div><div class="r-act">Manha poderosa - exercicio, meditacao ou leitura</div><div class="r-cat">saude</div></div></div>
+            <div class="r-row"><div class="r-time">07:00-09:00</div><div><div class="r-act">Foco profundo - bloco 1 (tarefa mais importante)</div><div class="r-cat">trabalho</div></div></div>
+            <div class="r-row"><div class="r-time">09:00-09:15</div><div><div class="r-act">Pausa ativa - alongamento</div><div class="r-cat">descanso</div></div></div>
+            <div class="r-row"><div class="r-time">09:15-12:00</div><div><div class="r-act">Foco profundo - bloco 2</div><div class="r-cat">trabalho</div></div></div>
+            <div class="r-row"><div class="r-time">12:00-13:00</div><div><div class="r-act">Almoco sem tela e descanso mental</div><div class="r-cat">descanso</div></div></div>
+            <div class="r-row"><div class="r-time">13:00-17:00</div><div><div class="r-act">Execucao operacional - e-mails, reunioes, tarefas</div><div class="r-cat">trabalho</div></div></div>
+            <div class="r-row"><div class="r-time">17:00-18:00</div><div><div class="r-act">Revisao do dia e planejamento do amanha</div><div class="r-cat">planejamento</div></div></div>
+            <div class="r-row"><div class="r-time">18:00-20:00</div><div><div class="r-act">Familia e lazer - desconexao digital</div><div class="r-cat">pessoal</div></div></div>
+            <div class="r-row"><div class="r-time">20:00-22:00</div><div><div class="r-act">Desenvolvimento pessoal - leitura ou curso</div><div class="r-cat">aprendizado</div></div></div>
+          </div>
+        </div>
+        <div class="page" id="page-missoes">
+          <div class="card">
+            <div class="card-hd">&#x1F3AF; Apollo - Missoes Ativas</div>
+            <div class="goal-item"><div class="goal-top"><span class="goal-name">&#x1F9D8; Meditar 10 min por dia</span><span class="goal-pct">67%</span></div><div class="progress"><div class="progress-bar" style="width:67%"></div></div><div class="goal-meta"><span>14 de 21 dias</span><span>Prazo: 7 dias</span></div></div>
+            <div class="goal-item"><div class="goal-top"><span class="goal-name">&#x1F4D6; Ler 20 paginas/dia</span><span class="goal-pct">40%</span></div><div class="progress"><div class="progress-bar" style="width:40%"></div></div><div class="goal-meta"><span>8 de 20 dias</span><span>Prazo: 12 dias</span></div></div>
+            <div class="goal-item"><div class="goal-top"><span class="goal-name">&#x1F4A7; Beber 2L de agua</span><span class="goal-pct">85%</span></div><div class="progress"><div class="progress-bar" style="width:85%"></div></div><div class="goal-meta"><span>17 de 20 dias</span><span>Prazo: 3 dias</span></div></div>
+            <div style="margin-top:16px"><button class="btn btn-cyan" style="width:100%;padding:13px">+ Criar Nova Missao</button></div>
+          </div>
+        </div>
+        <div class="page" id="page-financas">
+          <div class="card">
+            <div class="card-hd">&#x1F50D; Nero - Organizacao do Mes</div>
+            <div class="fin-cards">
+              <div class="fin-card"><div class="fin-lbl">Entradas</div><div class="fin-val pos">R$ 0</div></div>
+              <div class="fin-card"><div class="fin-lbl">Saidas</div><div class="fin-val neg">R$ 0</div></div>
+              <div class="fin-card"><div class="fin-lbl">Saldo</div><div class="fin-val neu">R$ 0</div></div>
+            </div>
+            <p style="color:var(--muted);font-size:.87rem;text-align:center;padding:20px 0;line-height:1.7">Registre seus gastos para que o Nero identifique onde seu dinheiro vai e sugira melhorias.</p>
+            <button class="btn btn-cyan" style="width:100%;padding:13px">+ Registrar Transacao</button>
+          </div>
+        </div>
+        <div class="page" id="page-comunidade">
+          <div class="card">
+            <div class="card-hd">&#x1F465; Comunidade Privada</div>
+            <div class="comm-locked"><div class="lock-ico">&#x1F512;</div><p><strong style="color:var(--text)">A comunidade esta chegando.</strong><br>Um espaco fechado com desafios de 21 dias, parceiros de accountability e ranking de execucao.<br><br><span style="color:var(--cyan);font-weight:700">Em breve disponivel para membros do Plano Completo.</span></p></div>
+          </div>
+        </div>
+        <div class="page" id="page-perfil">
+          <div class="card">
+            <div class="card-hd">&#x1F464; Meu Perfil</div>
+            <div style="display:flex;align-items:center;gap:18px;margin-bottom:28px">
+              <div style="width:64px;height:64px;background:var(--cyan);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:900;color:#000" id="bigAv">U</div>
+              <div><div style="font-size:1.2rem;font-weight:800" id="profName">Usuario</div><div style="color:var(--muted);font-size:.85rem" id="profEmail"></div><div style="display:inline-block;margin-top:6px;background:var(--cdim);border:1px solid var(--cborder);color:var(--cyan);font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:3px">Nivel 1 - Iniciante Consciente</div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div class="fin-card"><div class="fin-lbl">XP Total</div><div class="fin-val neu" id="profXP">0</div></div>
+              <div class="fin-card"><div class="fin-lbl">Sequencia</div><div class="fin-val neu" id="profStrk">0 dias</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="ov" onclick="closeOut(event)">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal()">&#x2715;</button>
+    <h2>CEREBRO RICO</h2>
+    <p class="modal-sub">Entre na plataforma e comece sua reprogramacao mental.</p>
+    <div class="m-tabs">
+      <div class="tab on" id="tL" onclick="swTab('login')">Entrar</div>
+      <div class="tab" id="tR" onclick="swTab('reg')">Criar Conta</div>
+    </div>
+    <div class="fw on" id="fL">
+      <div class="alrt" id="aL"></div>
+      <div class="fld"><label>E-mail</label><input type="email" id="lE" placeholder="seu@email.com"></div>
+      <div class="fld"><label>Senha</label><input type="password" id="lP" placeholder="Sua senha"></div>
+      <button class="btn btn-cyan btn-full" style="margin-top:8px" onclick="doLogin()">Entrar na Plataforma &#8594;</button>
+    </div>
+    <div class="fw" id="fR">
+      <div class="alrt" id="aR"></div>
+      <div class="fld"><label>Seu nome</label><input type="text" id="rN" placeholder="Como quer ser chamado?"></div>
+      <div class="fld"><label>E-mail</label><input type="email" id="rE" placeholder="seu@email.com"></div>
+      <div class="fld"><label>Senha</label><input type="password" id="rP" placeholder="Minimo 6 caracteres"></div>
+      <button class="btn btn-cyan btn-full" style="margin-top:8px" onclick="doRegister()">Iniciar Reprogramacao &#8594;</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var API = 'https://cerebro-rico-backend-production.up.railway.app';
+var token = null;
+function openModal(t){document.getElementById('ov').classList.add('open');swTab(t==='reg'?'reg':'login')}
+function closeModal(){document.getElementById('ov').classList.remove('open')}
+function closeOut(e){if(e.target.id==='ov')closeModal()}
+function swTab(t){
+  ['login','reg'].forEach(function(x){
+    var tId='t'+(x==='login'?'L':'R'),fId='f'+(x==='login'?'L':'R');
+    if(x===t){document.getElementById(tId).classList.add('on');document.getElementById(fId).classList.add('on')}
+    else{document.getElementById(tId).classList.remove('on');document.getElementById(fId).classList.remove('on')}
+  });
+}
+function showAlert(id,msg,tp){var e=document.getElementById(id);e.textContent=msg;e.className='alrt on '+tp}
+function doLogin(){
+  var email=document.getElementById('lE').value.trim(),pass=document.getElementById('lP').value;
+  if(!email||!pass){showAlert('aL','Preencha todos os campos.','err');return}
+  fetch(API+'/api/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,password:pass})})
+  .then(function(r){return r.json().then(function(d){return{ok:r.ok,data:d}})})
+  .then(function(res){if(!res.ok){showAlert('aL',res.data.error||'Erro ao entrar.','err');return}token=res.data.token;enterDash(res.data.user)})
+  .catch(function(){showAlert('aL','Erro de conexao. Tente novamente.','err')})
+}
+function doRegister(){
+  var name=document.getElementById('rN').value.trim(),email=document.getElementById('rE').value.trim(),pass=document.getElementById('rP').value;
+  if(!name||!email||!pass){showAlert('aR','Preencha todos os campos.','err');return}
+  if(pass.length<6){showAlert('aR','Senha deve ter pelo menos 6 caracteres.','err');return}
+  fetch(API+'/api/auth/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email,password:pass})})
+  .then(function(r){return r.json().then(function(d){return{ok:r.ok,data:d}})})
+  .then(function(res){if(!res.ok){showAlert('aR',res.data.error||'Erro ao criar conta.','err');return}token=res.data.token;enterDash(res.data.user)})
+  .catch(function(){showAlert('aR','Erro de conexao. Tente novamente.','err')})
+}
+function enterDash(user){
+  closeModal();
+  document.getElementById('landing').style.display='none';
+  document.getElementById('dash').style.display='block';
+  var first=(user.name||'Usuario').split(' ')[0];
+  document.getElementById('wNm').textContent=first;
+  document.getElementById('dNm').textContent=first;
+  document.getElementById('dAv').textContent=first[0].toUpperCase();
+  document.getElementById('bigAv').textContent=first[0].toUpperCase();
+  document.getElementById('profName').textContent=user.name||'Usuario';
+  document.getElementById('profEmail').textContent=user.email||'';
+  if(user.level)document.getElementById('sLvl').textContent=user.level;
+  if(user.streak_days){document.getElementById('sStrk').textContent=user.streak_days;document.getElementById('profStrk').textContent=user.streak_days+' dias'}
+  if(user.total_xp){document.getElementById('sXP').textContent=user.total_xp;document.getElementById('profXP').textContent=user.total_xp}
+  loadMotivation();
+}
+function loadMotivation(){
+  if(!token)return;
+  fetch(API+'/api/ai/apollo/motivation',{method:'POST',headers:{'Authorization':'Bearer '+token,'Content-Type':'application/json'}})
+  .then(function(r){return r.json()}).then(function(d){if(d.motivation)document.getElementById('motiveBox').textContent='"'+d.motivation+'"'})
+  .catch(function(){})
+}
+function showPage(id,el){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on')});
+  document.querySelectorAll('.sb-item').forEach(function(s){s.classList.remove('active')});
+  document.getElementById('page-'+id).classList.add('on');
+  el.classList.add('active');
+}
+function logout(){token=null;document.getElementById('dash').style.display='none';document.getElementById('landing').style.display='block'}
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Enter')return;
+  if(document.getElementById('fL').classList.contains('on'))doLogin();
+  else if(document.getElementById('fR').classList.contains('on'))doRegister();
+});
+</script>
+</body>
+</html>
